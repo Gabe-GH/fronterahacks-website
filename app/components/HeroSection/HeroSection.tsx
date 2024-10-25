@@ -17,6 +17,8 @@ import { frontera_logo_font } from "@/app/fonts";
 
 const footer_font = Pontano_Sans({
   weight: "300",
+  subsets: ["latin"],
+  display: "swap",
 });
 
 const sponsor_button_font = Hanken_Grotesk({
