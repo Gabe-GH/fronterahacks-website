@@ -334,7 +334,7 @@ const SponsorsSection = () => {
 
 const TeamSection = () => {
   return (
-    <div className="max-sm:hidden sm:hidden lg:block mt-36">
+    <div className="max-sm:hidden hidden lg:block mt-36">
       <h1
         className={`${frontera_logo_font.className} mr-10 my-4 md:my-10 text-5xl`}
       >
@@ -431,7 +431,7 @@ const FaqSection = () => {
       <h1
         className={`${frontera_logo_font.className} mr-10 my-4 md:my-10 text-5xl max-md:text-2xl max-md:pl-12`}
       >
-        Fequently Asked Questions
+        Frequently Asked Questions
       </h1>
 
       <div
