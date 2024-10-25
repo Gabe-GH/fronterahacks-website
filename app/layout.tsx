@@ -50,8 +50,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-theme="dark">
-      <head></head>
-      <body className={`${dm_sans.className} min-h-screen max-h-fit`}>
+      <body
+        className={`${dm_sans.className} min-h-screen min-w-full max-h-fit`}
+      >
         <UserProvider>
           <Navbar />
           {children}

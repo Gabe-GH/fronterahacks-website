@@ -5,6 +5,10 @@
     /*2.15rem;*/
 }
 
+.fronteraHacksLogoSm{
+    font-size: 30px;
+    line-height: 122%;
+}
 
 
 .dateText {
@@ -100,11 +104,28 @@
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    display: inline-block
 }
 
 .venueFaqText {
     color: rgba(204, 105, 234);
 }
+
+.subtitleText{
+
+    background: rgb(252,94,129);
+    background: -moz-linear-gradient(90deg, rgba(252,94,129,1) 0%, rgba(237,123,148,1) 33%, rgba(206,125,183,1) 58%, rgba(235,202,135,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(252,94,129,1) 0%, rgba(237,123,148,1) 33%, rgba(206,125,183,1) 58%, rgba(235,202,135,1) 100%);
+    background: linear-gradient(90deg, rgba(252,94,129,1) 0%, rgba(237,123,148,1) 33%, rgba(206,125,183,1) 58%, rgba(235,202,135,1) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    
+}
+
+
+
+
 
 /* Fallback for browsers that do not support custom btn style */
 @supports not ((-webkit-mask: none) or (mask-type: alpha)) {
@@ -115,10 +136,10 @@
 }
 
 @media (min-width:768px) {
-    .heroContainer {
+    /* .heroContainer {
         margin-left: 10%;
         margin-right: 10%;
-    }
+    } */
 
     .fronteraHacksLogo {
         font-size: 4rem;

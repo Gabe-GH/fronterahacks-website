@@ -19,6 +19,9 @@ export default async function middleware(req: any, ev: any) {
   if (pathname.startsWith("/example"))
     return NextResponse.redirect(new URL("/", req.url));
 
+  if (pathname.startsWith("/admin"))
+    return NextResponse.redirect(new URL("/", req.url));
+
   // Apply Auth0's authentication check
   const res = await withMiddlewareAuthRequired()(req, ev);
 
@@ -43,5 +46,5 @@ export default async function middleware(req: any, ev: any) {
 
 // Configure the matcher to apply middleware to all routes except home
 export const config = {
-  matcher: ["/register", "/me", "/example"], // Protect all routes except home route '/'
+  matcher: ["/register", "/me", "/example", "/admin/:path*"], // Protect all routes except home route '/'
 };
