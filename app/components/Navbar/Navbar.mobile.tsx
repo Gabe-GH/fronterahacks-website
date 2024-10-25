@@ -12,7 +12,6 @@ import { useUser } from "@auth0/nextjs-auth0/client";
 // rippleui's drawer component, inner components will be refactored later
 // ***
 export default function MobileNavbar() {
-
   return (
     <nav className="navbar navbar-no-boxShadow bg-transparent">
       <div className="navbar-end">
@@ -39,7 +38,7 @@ export default function MobileNavbar() {
         <label htmlFor="drawer-right" className="overlay"></label>
 
         {/* everything beyond this point is for the drawer and it's content */}
-        <div className="drawer drawer-right h-auto min-w-48 max-w-56 text-nowrap text-ellipsis">
+        <div className="drawer drawer-right h-auto min-w-48 max-w-56 text-nowrap text-ellipsis bg-zinc-950">
           {/* this is for handling the layout of the contents in the drawer */}
           <div className="flex flex-col justify-end items-end h-full text-right">
             {/* for defining what closes the drawer*/}
@@ -74,13 +73,15 @@ export default function MobileNavbar() {
               <hr className={`${styles.borderDecoration} my-4`} />
 
               {/* Challenge Link */}
-              <h2 className={`${styles.drawerLink} text-xl uppercase mr-8`}>
+              <h2
+                className={`${styles.drawerLink} text-xl uppercase mr-8 hidden`}
+              >
                 <Link href="/#challenges">challenges</Link>
               </h2>
 
               {/* Prizes Link */}
               <h2
-                className={`${styles.drawerLink} text-xl uppercase mr-8 mt-4`}
+                className={`${styles.drawerLink} text-xl uppercase mr-8 mt-4 hidden`}
               >
                 <Link href="/#prizes">prizes</Link>
               </h2>

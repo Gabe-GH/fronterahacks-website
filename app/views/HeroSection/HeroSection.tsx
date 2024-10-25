@@ -68,7 +68,7 @@ const HookText = () => {
   );
 };
 
-const RegisterBtn = () => {
+export const RegisterBtn = () => {
   return (
     <Link
       className={`${styles.customBtnRadius} btn p-4 md:px-6 md:py-8`}

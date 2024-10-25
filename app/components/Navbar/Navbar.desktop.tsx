@@ -22,10 +22,16 @@ export default function DesktopNavbar(props: any) {
         <Link href="/#schedule" className={`${styles.linkStyle} navbar-item`}>
           schedule
         </Link>
-        <Link href="/#challenges" className={`${styles.linkStyle} navbar-item`}>
+        <Link
+          href="/#challenges"
+          className={`${styles.linkStyle} navbar-item hidden`}
+        >
           challenges
         </Link>
-        <Link href="/#prizes" className={`${styles.linkStyle} navbar-item`}>
+        <Link
+          href="/#prizes"
+          className={`${styles.linkStyle} navbar-item hidden`}
+        >
           prizes
         </Link>
         <Link href="/#faq" className={`${styles.linkStyle} navbar-item`}>
@@ -38,14 +44,13 @@ export default function DesktopNavbar(props: any) {
         <>
           {/* Login */}
           <div className="navbar-end">
-            <Link href={`/api/auth/login?prompt=login`}>
-              <button
-                type="button"
-                className="btn btn-outline btn-md p-4 uppercase font-extralight text-base text-nowrap"
-              >
-                log in
+            <a href={`/api/auth/login?prompt=login`}>
+              <button type="button" className="btn btn-outline btn-md p-4 ">
+                <span className="uppercase font-extralight text-base text-nowrap">
+                  log in
+                </span>
               </button>
-            </Link>
+            </a>
           </div>
         </>
       )}
@@ -55,14 +60,13 @@ export default function DesktopNavbar(props: any) {
         <>
           {/* Login */}
           <div className="navbar-end">
-            <button type="button" className="btn btn-outline btn-md p-4">
-              <Link
-                href={`/api/auth/logout`}
-                className="uppercase font-extralight text-base text-nowrap"
-              >
-                log out
-              </Link>
-            </button>
+            <a href={`/api/auth/logout`}>
+              <button type="button" className="btn btn-outline btn-md p-4">
+                <span className="uppercase font-extralight text-base text-nowrap">
+                  log out
+                </span>
+              </button>
+            </a>
           </div>
         </>
       )}

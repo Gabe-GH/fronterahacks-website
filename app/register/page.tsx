@@ -5,10 +5,11 @@ import { useRouter } from "next/navigation";
 
 import { createHacker } from "@/app/db/controllers";
 
+import { useUser } from "@auth0/nextjs-auth0/client";
+
 import {
   AgeInput,
   DietaryRestrictionInput,
-  EmailInput,
   FirstNameInput,
   FormHeader,
   GenderInput,
@@ -27,13 +28,13 @@ import {
 
 export default function Page() {
   const router = useRouter();
+  const session = useUser();
 
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     age: "",
     phoneNumber: "",
-    email: "",
     studyLevel: "",
     school: "n/a",
     country: "",
@@ -100,9 +101,19 @@ export default function Page() {
     setLoading(true);
     setError(null);
     try {
-      // Try making a hacker here
-      await createHacker(formData);
-      router.push("/");
+      const user = session.user;
+
+      if (!user) throw new Error("Not logged in");
+
+      const email = user.email as string;
+
+      const hacker = {
+        ...formData,
+        email,
+      };
+
+      await createHacker(hacker);
+      router.push("/me");
     } catch (e) {
       const error = e as Error;
       console.error(error.message);
@@ -123,6 +134,7 @@ export default function Page() {
     <form
       className="mx-auto flex w-full max-w-sm flex-col gap-6"
       onSubmit={handleSubmit}
+      autoComplete="off"
     >
       {/* Form Header */}
       <FormHeader header_text={`Register for Frontera Hacks`} />
@@ -150,13 +162,6 @@ export default function Page() {
         <PhoneInput
           name="phoneNumber"
           value={formData.phoneNumber}
-          onChange={handleChange}
-        />
-
-        {/* email */}
-        <EmailInput
-          name="email"
-          value={formData.email}
           onChange={handleChange}
         />
 

@@ -1,0 +1,16 @@
+.QRcode {
+    border-radius: 20px;
+    background: white;
+    padding: 5%;
+}
+
+.profile {
+    background: #55153a75;
+
+    width: fit-content;
+
+    border-radius: 20px;
+    border-color: #177397;
+    border-width: .25rem;
+    padding: 3%;
+}

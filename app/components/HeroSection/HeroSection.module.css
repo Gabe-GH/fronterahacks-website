@@ -1,12 +1,15 @@
 .fronteraHacksLogo {
-    font-size: 80px; /*1.85rem;*/
-    line-height: 122%; /*2.15rem;*/
+    font-size: 80px;
+    /*1.85rem;*/
+    line-height: 122%;
+    /*2.15rem;*/
 }
 
 .fronteraHacksLogoSm{
     font-size: 30px;
     line-height: 122%;
 }
+
 
 .dateText {
     font-size: .85rem;
@@ -53,6 +56,36 @@
     background: linear-gradient(90deg, rgba(139, 199, 255, 1) 0%, rgba(157, 111, 255, 1) 50%, rgba(255, 72, 215, 1) 100%) border-box;
 }
 
+.customBtnRadiusDisabled {
+    background-color: black;
+}
+
+.customBtnRadiusDisabled::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: .75rem;
+    border: 2px solid transparent;
+    background: linear-gradient(90deg, rgba(255, 240, 161, 1) 0%, rgba(255, 176, 118, 1) 50%, rgba(255, 90, 80, 1) 100%) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+}
+
+.btnTextDisabled {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    background: -moz-linear-gradient(90deg, rgba(255, 240, 161, 1) 0%, rgba(255, 176, 118, 1) 50%, rgba(255, 90, 80, 1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(255, 240, 161, 1) 0%, rgba(255, 176, 118, 1) 50%, rgba(255, 90, 80, 1) 100%);
+    background: linear-gradient(90deg, rgba(255, 240, 161, 1) 0%, rgba(255, 176, 118, 1) 50%, rgba(255, 90, 80, 1) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
 .btnText {
     font-size: .98rem;
     line-height: 1.5rem;
@@ -74,8 +107,8 @@
     display: inline-block
 }
 
-.venueFaqText{
-    color: rgba(204,105,234);
+.venueFaqText {
+    color: rgba(204, 105, 234);
 }
 
 .subtitleText{
@@ -137,22 +170,35 @@
     }
 }
 
+@media (max-width:560px) {
+    .fronteraHacksLogo {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width:390) {
+    .fronteraHacksLogo {
+        font-size: 2rem;
+        text-wrap: pretty;
+    }
+}
+
 /*Specifically for the Pillars Section of the homepage*/
 
 .pillarsSection {
     text-align: center;
     padding: 2rem 0;
-  }
-  
-  .sectionTitle {
+}
+
+.sectionTitle {
     font-size: 2rem;
     margin-bottom: 1rem;
-  }
+}
 
-.pillarsContainer{
+.pillarsContainer {
     display: flex;
     justify-content: space-around;
-    align-items:center;
+    align-items: center;
 
 }
 
@@ -160,15 +206,15 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    
+
 }
 
-.pillarImage{
+.pillarImage {
     border-radius: 50%;
     object-fit: cover;
 }
 
-.pillarCaption{
+.pillarCaption {
     margin-top: 1 rem;
     font-size: 1rem;
 }

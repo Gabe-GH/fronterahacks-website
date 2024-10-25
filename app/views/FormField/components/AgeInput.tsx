@@ -131,7 +131,9 @@ const AgeInput = memo(function AgeInput(props: GeneralFormType) {
         <input
           placeholder="Enter age"
           name={props.name}
-          type="number"
+          type="text"
+          inputMode="numeric"
+          pattern="[0-9]*"
           className={`${styles.ageInputField} ${
             isValidAge || age > 18 ? "" : "input-error"
           } input max-w-full`}
