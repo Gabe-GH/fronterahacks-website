@@ -13,10 +13,16 @@ import { profiles } from "./team";
 
 import honeyStyle from "./honeycomb.module.css";
 
-import { frontera_logo_font, sponsor_button_font } from "@/app/fonts";
+import { frontera_logo_font } from "@/app/fonts";
 
 const footer_font = Pontano_Sans({
   weight: "300",
+});
+
+const sponsor_button_font = Hanken_Grotesk({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
 });
 
 export default function HeroSection() {
@@ -261,26 +267,33 @@ const SponsorsSection = () => {
         Frontera Hacks is made possible by our wonderful sponsors.
       </p>
       <div
-        className={`mt-12 grid grid-cols-3 gap-y-10 place-items-center max-md:grid-cols-1`}
+        className={`mt-12 grid grid-cols-3 gap-y-10 gap-x-5 place-items-center max-md:grid-cols-1`}
       >
+        <Image
+          src="/sponsors/Google.png"
+          alt=""
+          width={170}
+          height={70}
+          className={``}
+        />
+        <Image
+          src="/sponsors/HackerRank.png"
+          alt=""
+          width={400}
+          height={50}
+          className={``}
+        />
         <Image
           src="/sponsors/Heb.png"
           alt=""
-          width={152}
-          height={59}
+          width={160}
+          height={60}
           className={``}
         />
         <Image
           src="/sponsors/Galaxy.png"
           alt=""
           width={200}
-          height={50}
-          className={``}
-        />
-        <Image
-          src="/sponsors/HackerRank.png"
-          alt=""
-          width={120}
           height={50}
           className={``}
         />
@@ -292,21 +305,13 @@ const SponsorsSection = () => {
           className={`max-sm:w-72`}
         />
         <Image
-          src="/sponsors/StandOutStickers.png"
-          alt=""
-          width={122}
-          height={60}
-          className={``}
-        />
-        <Image
-          src="/sponsors/GitHub.png"
+          src="/sponsors/MasterStitch.png"
           alt=""
           width={190}
           height={53}
           className={``}
         />
       </div>
-
       <p
         className={`md:mt-20 font-light text-sm justify-self-center text-center max-sm:mt-10 max-sm:text-xs`}
       >
@@ -318,8 +323,8 @@ const SponsorsSection = () => {
           className={`bg-white text-black border border-white rounded-full py-1 px-4 block text-center max-w-40 mx-auto`}
           href="mailto:fronteradevs@gmail.com"
         >
-          <p className={`${sponsor_button_font.className} text-xs bold`}>
-            BECOME A SPONSOR
+          <p className={`${sponsor_button_font.className} text-xs `}>
+            BECOME A SPONSOR{" "}
           </p>
         </Link>
       </div>
@@ -654,15 +659,7 @@ const Footer = () => {
           © 2024 Frontera Hacks. Made with ♡ by the Frontera Devs team
         </p>
       </div>
-      <div>
-        <Link href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf">
-          <p
-            className={`${footer_font.className} mt-1 text-blue-400 underline text-center max-md:text-xs`}
-          >
-            MLH Code of Conduct
-          </p>
-        </Link>
-      </div>
+      <div className="mt-4"></div>
     </div>
   );
 };
